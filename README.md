@@ -1,1 +1,1 @@
-# cosrx_project
+# cosrx
