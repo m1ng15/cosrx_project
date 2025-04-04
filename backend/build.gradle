@@ -28,6 +28,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'mysql:mysql-connector-java:8.0.33'
+	implementation 'org.modelmapper:modelmapper:3.1.1'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 //	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
@@ -41,6 +42,8 @@ dependencies {
 
 	// thymeleaf 레이아웃
 	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.3.0'
+	// validation gradle
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
 }
 
