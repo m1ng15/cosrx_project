@@ -51,7 +51,7 @@ public class UserEntity extends BaseEntity {
     @Column(nullable = false, columnDefinition = "CHAR(1) DEFAULT 'N'")
     private String delete_YN;
 
-    @Column(nullable = false, columnDefinition = "CHAR(1) DEFAULT 'N'")
+    @Column(nullable = true)
     private LocalDateTime delete_date;
 
 }
