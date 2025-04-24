@@ -8,9 +8,12 @@
     <div>
         <form th:action="@{/login}" method="post">
             <input type="text" name="userId" placeholder="아이디 입력">
-            <input type="text" name="pwd" placeholder="비밀번호 입력">
+            <input type="text" name="password" placeholder="비밀번호 입력">
             <button type="submit">Login</button>
         </form>
+    </div>
+    <div class="form-text" id="err_message" th:if="${error != null}" style="color:red ; font-weight:bold;text-align: center ;padding-top:0px;">
+        <span th:text="${error}"></span>
     </div>
 </th:block>
 

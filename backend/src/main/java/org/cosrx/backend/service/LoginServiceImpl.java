@@ -21,7 +21,11 @@ public class LoginServiceImpl implements LoginServiceIf {
     @Override
     public UserDTO login_info(LoginDTO loginDTO) {
         Optional<UserEntity> result = loginRepository.findByUserId(loginDTO.getUserId());
-        UserEntity user = result.orElse(null);
+        if(result.isEmpty()) {
+            return null;
+        }
+//        UserEntity user = result.orElse(null);
+        UserEntity user = result.get();
         UserDTO userDTO = modelMapper.map(user, UserDTO.class);
         return userDTO;
     }
