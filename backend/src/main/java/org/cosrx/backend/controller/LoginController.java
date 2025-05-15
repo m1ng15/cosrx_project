@@ -1,15 +1,21 @@
 package org.cosrx.backend.controller;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.cosrx.backend.config.JwtUtil;
+import org.cosrx.backend.config.KakaoConfig;
 import org.cosrx.backend.dto.LoginDTO;
 import org.cosrx.backend.dto.UserDTO;
 import org.cosrx.backend.service.LoginServiceIf;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,15 +31,22 @@ import java.util.Arrays;
 public class LoginController {
 
     private final LoginServiceIf loginServiceIf;
+//    private KakaoConfig kakaoConfig;
+    private final JwtUtil jwtUtil;
+
+
 
     //    로그인 페이지 이동
     @GetMapping("/login")
-    public String loginGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+    public String loginGet(HttpServletRequest req, HttpServletResponse resp, Model model) throws IOException, ServletException {
         System.out.println("🔍 Get /login 도착!");
 
         req.getParameterMap().forEach((key, value) -> {
             System.out.println("👉 " + key + " = " + Arrays.toString(value));
         });
+
+        String location = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id="+client_id+"&redirect_uri="+redirect_uri;
+        model.addAttribute("location", location);
         return "login";
     }
 
@@ -54,20 +67,34 @@ public class LoginController {
         HttpSession session = req.getSession();
         session.setAttribute("userId", userId);
         System.out.println("loginDTO = " + loginDTO);
-        UserDTO loginMemberDTO = loginServiceIf.login_info(loginDTO);
+//        UserDTO loginMemberDTO = loginServiceIf.login_info(loginDTO);
+        String result = loginServiceIf.login_info(loginDTO);
 //        아이디가 있는지 없는지부터 체크
-        System.out.println("loginMemberDTO = " + loginMemberDTO);
-        if(loginMemberDTO == null) {
+//        System.out.println("loginMemberDTO = " + loginMemberDTO);
+//        if(loginMemberDTO == null) {
+        if("NoUser".equals(result)) {
             redirectAttributes.addFlashAttribute("error", "아이디가 존재하지 않습니다.");
             return "redirect:/login";
-        } else { //아이디가 있는 경우
-            if(!loginMemberDTO.getPassword().equals(pwd)) { //비밀번호가 틀리다면
-                redirectAttributes.addFlashAttribute("error", "비밀번호가 틀렸습니다.");
-                return "redirect:/login";
-            } else { //아이디 패스워드 동일한 경우
-                session.setAttribute("loginMemberDTO", loginMemberDTO);
-                return "redirect:/";
-            }
         }
+        if("WrongPwd".equals(result)) {
+            redirectAttributes.addFlashAttribute("error", "비밀번호가 존재하지 않습니다.");
+            return "redirect:/login";
+        }
+
+//        session.setAttribute("jwtToken", result);
+//        jwt를 쿠키에 저장
+        Cookie jwtCookie = new Cookie("jwtToken", result);
+        jwtCookie.setHttpOnly(true);//(자바스크립트 접근 불가)
+        jwtCookie.setSecure(true);//HTTPS 환경에서만 전송
+        jwtCookie.setPath("/");//모든 경로에서 접근 가능
+        jwtCookie.setMaxAge(3600);//지속시간
+
+        resp.addCookie(jwtCookie);
+
+        return "redirect:/";
     }
+
+//    카카오 로그인
+
+
 }
