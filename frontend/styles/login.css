@@ -1,0 +1,171 @@
+body {margin: 65px auto;}
+body .hd_top {}
+body .header {}
+/* main */
+body main {}
+body main .login_wrap {
+    max-width: 1130px; margin: 65px auto;
+    display: flex; justify-content: center;
+} 
+body main .login_wrap > * {width: calc(100% / 2);}
+body main .login_wrap .title {padding: 30px 0;}
+body main .login_wrap .title h2 {font-size: 1.13rem; font-weight: 600; margin-bottom: 15px;}
+/* section */
+body main .login_wrap .login_box {
+    border-right: solid #111 1px;
+    padding-right: 115px;
+} 
+body main .login_wrap .login_box .title {} 
+body main .login_wrap .login_box .title h2 {} 
+body main .login_wrap .login_box .title p {line-height: 1.3;} 
+body main .login_wrap .login_box .sns_icons {
+    display: flex; justify-content: center;
+    border-top: solid rgba(0,0,0,0.2) 1px;
+    border-bottom: solid rgba(0,0,0,0.2) 1px;
+    padding: 30px 0;
+} 
+body main .login_wrap .login_box .sns_icons .icon {
+    width: 75px; height: 75px;
+    background-image: url("../images/sns_sprite.png");
+    background-size: 150px 150px;
+    background-repeat: no-repeat;
+} 
+body main .login_wrap .login_box .sns_icons .kakao {background-position: 0 0;}
+body main .login_wrap .login_box .sns_icons .naver {background-position: -75px 0;}
+body main .login_wrap .login_box .sns_icons .google {background-position: 0 -73px;}
+body main .login_wrap .login_box .sns_icons .apple {background-position: -75px -73px;}
+/* === form(loginFrm) */
+body main .login_wrap .login_box .loginFrm {padding-top: 45px;}
+body main .login_wrap .login_box .loginFrm label {}
+body main .login_wrap .login_box .loginFrm input {
+    background: none;
+    flex: 1; padding-bottom: 15px;
+}
+/* [S] id_group/pw_group 공통선택자 */
+body main .login_wrap .login_box .loginFrm .id_group, .pw_group {position: relative;}
+body .login_wrap .login_box .loginFrm .id_group label, .pw_group label {
+    position: absolute; top: 12px;
+}
+/* 아이디/비밀번호 입력 시, 해당 라벨 움직이기 */
+body main .login_wrap .login_box .loginFrm .input_group {
+    display: flex; align-items: center;  margin-top: 10px; border-bottom: solid #111 1px;
+}
+body main .login_wrap .login_box .loginFrm .input_group input {
+    font-size: 1rem;
+}
+body main .login_wrap .login_box .loginFrm .input_group input:focus + label,
+body main .login_wrap .login_box .loginFrm .input_group input:not(:placeholder-shown) + label {
+    font-size: 0.81rem;
+    top: -18px;
+}
+body main .login_wrap .login_box .loginFrm .input_group input:focus ~ .x_btn,
+body main .login_wrap .login_box .loginFrm .input_group input:not(:placeholder-shown) ~ .x_btn {
+    display: block;
+}
+/* 아이디/비밀번호 지우기 공통 */
+body main .login_wrap .login_box .loginFrm .x_btn {
+    width: 16px; height: 16px;
+    margin-left: 10px;
+    display: none; /* input을 클릭했을 때 나타나기 */
+}
+body main .login_wrap .login_box .loginFrm .x_btn img {width: 100%;}
+/* 아이디/비밀번호 미입력 경고문 */
+body main .login_wrap .login_box .loginFrm p {
+    display: none;
+    font-size: 0.81rem; color: #E2574C;
+    background: url(../images/warning.png) no-repeat left center / 12px 12px;
+    padding-left: 17px; margin-top: 5px;
+}
+/* [E] id_group/pw_group 공통선택자 */
+/* = id_group */
+body main .login_wrap .login_box .loginFrm .id_group {}
+body main .login_wrap .login_box .loginFrm .id_group label {}
+body main .login_wrap .login_box .loginFrm .id_group .id_input {}
+body main .login_wrap .login_box .loginFrm .id_group .id_input #id {}
+body main .login_wrap .login_box .loginFrm .id_group .id_input .x_btn {}
+/* = pw_group */
+body main .login_wrap .login_box .loginFrm .pw_group {margin-top: 35px;}
+body main .login_wrap .login_box .loginFrm .pw_group .pw_input {}
+body main .login_wrap .login_box .loginFrm .pw_group .pw_input #pw {}
+body main .login_wrap .login_box .loginFrm .pw_group .pw_input .eye_btn {
+    width: 20px; height: 20px;
+    opacity: 0.4; cursor: not-allowed;
+}
+body main .login_wrap .login_box .loginFrm .pw_group .pw_input .eye_btn:not(:disabled) {opacity: 1; cursor: pointer;}
+body main .login_wrap .login_box .loginFrm .pw_group .pw_input .eye_btn img {width: 100%;}
+body main .login_wrap .login_box .loginFrm .pw_group .pw_input .x_btn {}
+/* = options */
+body .login_wrap .login_box .loginFrm .login_options {
+    margin-top: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.81rem;
+}
+body main .login_wrap .login_box .loginFrm .login_options .checkbox_group {}
+body main .login_wrap .login_box .loginFrm .login_options .checkbox_group label {display: inline-flex; align-items: center;}
+body main .login_wrap .login_box .loginFrm .login_options .checkbox_group label .checkbox_icon {
+    display: inline-block; width: 16px; height: 16px; margin-right: 5px;
+    background: url('../images/unchecked.png') no-repeat center/cover;
+    cursor: pointer;
+}
+body main .login_wrap .login_box .loginFrm .login_options .checkbox_group .save_id {margin-right: 7px;}
+body main .login_wrap .login_box .loginFrm .login_options .checkbox_group .auto_login {}
+body main .login_wrap .login_box .loginFrm .login_options .checkbox_group label input:checked + .checkbox_icon {
+    background-image: url('../images/checked.png');
+}
+body main .login_wrap .login_box .loginFrm .login_options a {
+    align-self: flex-end; text-decoration: underline;
+}
+body main .login_wrap .login_box .loginFrm .form_btn {padding: 45px 0;}
+body main .login_wrap .login_box .loginFrm .form_btn > button {
+    display: block; width: 100%;
+    padding: 18px 0;
+    border: solid #000 1px;
+    font-size: 0.81rem;
+}
+body main .login_wrap .login_box .loginFrm .form_btn .btn_login {}
+body main .login_wrap .login_box .loginFrm .form_btn .btn_login:hover {background-color: #000; color: #fff;}
+body main .login_wrap .login_box .loginFrm .form_btn .btn_signup {position: relative; opacity: 0.2; margin-top: 10px;}
+body main .login_wrap .login_box .loginFrm .form_btn .btn_signup:hover {border-color: transparent; opacity: 1;}
+/* [S] 회원가입 버튼 애니메이션 */
+body main .login_wrap .login_box .loginFrm .form_btn .btn_signup::before,
+body main .login_wrap .login_box .loginFrm .form_btn  .btn_signup .left,
+body main .login_wrap .login_box .loginFrm .form_btn  .btn_signup .bottom,
+body main .login_wrap .login_box .loginFrm .form_btn .btn_signup::after
+{
+    background-color: #000;
+    content: ''; display: block; width: 0; height: 0;
+    position: absolute; z-index: 1;
+}
+body main .login_wrap .login_box .loginFrm .form_btn .btn_signup:hover::before,
+body main .login_wrap .login_box .loginFrm .form_btn  .btn_signup:hover .bottom { width: 100%; transition: width 0.2s ease 0s;}
+body main .login_wrap .login_box .loginFrm .form_btn .btn_signup:hover .left,
+body main .login_wrap .login_box .loginFrm .form_btn  .btn_signup:hover::after { height: 100%; transition: height 0.2s ease 0s;}
+body main .login_wrap .login_box .loginFrm .form_btn .btn_signup::before {
+    height: 1px;
+    top: 0; right: 0;    
+}
+body main .login_wrap .login_box .loginFrm .form_btn .btn_signup .left {
+    width: 1px;
+    top: 0; left: 0;
+}
+body main .login_wrap .login_box .loginFrm .form_btn .btn_signup .bottom {
+    height: 1px;
+    bottom: 0; left: 0;
+}
+body main .login_wrap .login_box .loginFrm .form_btn .btn_signup::after {
+    width: 1px;
+    bottom: 0; right: 0;
+}
+/* [E] 회원가입 버튼 애니메이션 */
+body main .login_wrap .login_box .guest_order {text-align: center;}
+body main .login_wrap .login_box .guest_order a {font-size: 0.75rem; color: #666; text-decoration: underline;}
+body main .login_wrap .login_box .guest_order a:hover {font-weight: 500;}
+/* aside */
+body main .login_wrap aside {padding-left: 115px;}
+body main .login_wrap aside .membership_bnr {height: 586px;}
+body main .login_wrap aside .membership_bnr .title {}
+body main .login_wrap aside .membership_bnr .title h2 {}
+body main .login_wrap aside .membership_bnr .title p {}
+body main .login_wrap aside .membership_bnr .bnr_image {width: 100%; height: 100%; background: url(../images/join_event.jpg) no-repeat center / cover;}
+/* footer */
+body footer {}
