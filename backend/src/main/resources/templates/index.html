@@ -1231,6 +1231,13 @@
         </div>
     </main>
 
+    <div id="error-modal" class="modal" th:if="${error}">
+        <div class="modal-content">
+            <p th:text="${error}"></p>
+            <button onclick="closeModal()">확인</button>
+        </div>
+    </div>
+
 
 <footer>
     <div class="ft_top">

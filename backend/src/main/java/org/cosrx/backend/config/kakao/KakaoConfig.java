@@ -1,9 +1,9 @@
-package org.cosrx.backend.config;
+package org.cosrx.backend.config.kakao;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
 
-@Component
+@Configuration
 public class KakaoConfig{
 
     @Value("${kakao.client_id}")
