@@ -2,10 +2,10 @@
 <html lang="ko">
 <?php $pageTitle = "COSRX 로그인/회원가입"; ?>
 <head>
-    <?php include("common/head.php"); ?>
     <!-- 로그인 페이지 별도 js & css -->
     <script src="script/login.js" defer></script>
     <link rel="stylesheet" href="styles/login.css">
+    <?php include("common/head.php"); ?>
 </head>
 <body>
     <div class="hd_top">

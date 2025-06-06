@@ -1,5 +1,5 @@
 <div class="hd_navbar">
-    <h1><a href="#"><img src="images/cosrx_logo.png" alt="코스알엑스"></a></h1>
+    <h1><a href="index.php"><img src="images/cosrx_logo.png" alt="코스알엑스"></a></h1>
     <nav>
         <ul class="path">
             <li><a href="#">New</a></li>

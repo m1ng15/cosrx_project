@@ -12,8 +12,8 @@
 <link rel="shorcut icon" href="images/cosrx_favicon.webp" type="images/x-icon">
 <link rel="icon" href="images/cosrx_favicon.webp" type="images/x-icon">
 <!-- Script 연결 -->
-<script src="script/index_swiper.js" defer></script>
-<script src="script/index.js" defer></script>
+<script src="script/common.js" defer></script>
 <!-- CSS 연결 -->
 <link rel="stylesheet" href="styles/reset.css">
 <link rel="stylesheet" href="styles/common.css">
+<link rel="stylesheet" href="styles/index.css">
