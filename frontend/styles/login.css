@@ -166,6 +166,17 @@ body main .login_wrap aside .membership_bnr {height: 586px;}
 body main .login_wrap aside .membership_bnr .title {}
 body main .login_wrap aside .membership_bnr .title h2 {}
 body main .login_wrap aside .membership_bnr .title p {}
-body main .login_wrap aside .membership_bnr .bnr_image {width: 100%; height: 100%; background: url(../images/join_event.jpg) no-repeat center / cover;}
+body main .login_wrap aside .membership_bnr .bnr_image {
+    display: flex;
+    width: 100%; height: 100%;
+    position: relative;
+}
+body main .login_wrap aside .membership_bnr .bnr_image .image {width: 100%; height: 100%; background: url(../images/join_event.jpg) no-repeat center / cover;}
+body main .login_wrap aside .membership_bnr .bnr_more {
+    opacity: 0.4;
+    position: absolute; top: 50%; right: -80px; transform: translateY(-50%); 
+    width: 40px; height: 40px; background: url(../images/more_arrow.png) no-repeat center / cover;}
+    body main .login_wrap aside .membership_bnr .bnr_more .text {display: inline-block; font-size: 0.81rem; white-space: nowrap; padding-top: 43px;}
+    body main .login_wrap aside .membership_bnr .bnr_image .bnr_more:hover {opacity: 1;}
 /* footer */
 body footer {}
