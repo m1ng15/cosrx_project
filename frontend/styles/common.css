@@ -125,9 +125,9 @@ header .hd_navbar nav .sub_bg .sub_contents .event_sub li:last-child {margin-bot
 header .hd_navbar nav .sub_bg .sub_contents .event_sub li a {}
 header .hd_navbar nav .sub_bg .sub_contents .event_sub li a img {width: 100%;}
 /* E :스킨케어 서브메뉴 */
-header .hd_navbar .hd_icon {width: 150px; text-align: right;}
-header .hd_navbar .hd_icon a {display: inline-block; width: 20px;}
-header .hd_navbar .hd_icon a:nth-child(2) {margin: 0 15px;}
+header .hd_navbar .hd_icon {width: max-content; text-align: right;}
+header .hd_navbar .hd_icon a {display: inline-block; width: 20px; height: 20px; margin-right: 15px;}
+header .hd_navbar .hd_icon a:last-child {margin-right: 0;}
 header .hd_navbar .hd_icon a img {width: 100%;}
 /*=====================================================< 9. Footer >*/
 footer {padding: 80px 0;}

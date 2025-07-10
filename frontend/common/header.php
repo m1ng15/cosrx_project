@@ -63,7 +63,9 @@
     </nav>
     <div class="hd_icon">
         <a href="#"><img src="images/search.png" alt="검색"></a>
-        <a href="#"><img src="images/cart.png" alt="장바구니"></a>
         <a href="./login.php"><img src="images/user.png" alt="마이페이지"></a>
+        <a href="#"><img src="images/cart.png" alt="장바구니"></a>
+        <a href="#"><img src="images/login.png" alt="로그인"></a>
+        <a href="#"><img src="images/logout.png" alt="로그아웃"></a>
     </div>
 </div>
