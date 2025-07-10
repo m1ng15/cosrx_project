@@ -2,10 +2,10 @@
 <html lang="ko">
 <?php $pageTitle = "COSRX 로그인/회원가입"; ?>
 <head>
-    <?php include("common/head.php"); ?>
     <!-- 로그인 페이지 별도 js & css -->
     <script src="script/login.js" defer></script>
     <link rel="stylesheet" href="styles/login.css">
+    <?php include("common/head.php"); ?>
 </head>
 <body>
     <div class="hd_top">
@@ -79,7 +79,12 @@
                         <h2>멤버십 혜택</h2>
                         <p>코스알엑스 공식몰에서만 만나볼 수 있는 혜택!</p>
                     </div>
-                    <div class="bnr_image"></div>
+                    <div class="bnr_image">
+                        <div class="image"></div>
+                        <a href="#" class="bnr_more">
+                            <span class="text">혜택 더보기</span>
+                        </a>
+                    </div>
                 </div>
             </aside>
         </div>

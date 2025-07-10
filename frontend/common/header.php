@@ -1,5 +1,5 @@
 <div class="hd_navbar">
-    <h1><a href="#"><img src="images/cosrx_logo.png" alt="코스알엑스"></a></h1>
+    <h1><a href="index.php"><img src="images/cosrx_logo.png" alt="코스알엑스"></a></h1>
     <nav>
         <ul class="path">
             <li><a href="#">New</a></li>
@@ -63,7 +63,9 @@
     </nav>
     <div class="hd_icon">
         <a href="#"><img src="images/search.png" alt="검색"></a>
-        <a href="#"><img src="images/cart.png" alt="장바구니"></a>
         <a href="./login.php"><img src="images/user.png" alt="마이페이지"></a>
+        <a href="#"><img src="images/cart.png" alt="장바구니"></a>
+        <a href="#"><img src="images/login.png" alt="로그인"></a>
+        <a href="#"><img src="images/logout.png" alt="로그아웃"></a>
     </div>
 </div>
